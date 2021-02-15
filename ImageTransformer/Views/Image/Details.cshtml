@@ -1,0 +1,55 @@
+﻿@model ImageTransformer.Models.ImageModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+@*<div>
+    <h4>ImageModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ImageName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ImageName)
+        </dd>
+        <dd class="col-sm-10">
+            <img src="@("~/Images/" + Model.ImageName)" asp-append-version="true" width="500px" height="500px" />
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+<div class="container padded-container">
+    <div class="row ">
+        <div class="col">
+            <img class="img-responsive" src="@("~/Images/" + Model.ImageName)" asp-append-version="true" />
+        </div>
+        <div class="col">
+            <div class="img-container bg-dark">
+                <p class="h1">Result</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container padded-container">
+    <div class="btn-group btn-group-lg special" role="group">
+        <button type="button" class="btn btn-secondary">Button</button>
+        <button type="button" class="btn btn-secondary">Button</button>
+        <button type="button" class="btn btn-secondary">Button</button>
+        <button type="button" class="btn btn-secondary">Button</button>
+        <button type="button" class="btn btn-secondary">Button</button>
+        <button type="button" class="btn btn-secondary">Button</button>
+        <button type="button" class="btn btn-secondary">Button</button>
+        <button type="button" class="btn btn-secondary">Button</button>
+    </div>
+</div>
+    

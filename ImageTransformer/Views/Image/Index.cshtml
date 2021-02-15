@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ImageTransformer.Models.ImageModel>
+
+@{
+    ViewData["Title"] = "Image List";
+}
+<div id="PlaceHolder"></div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th class="align-middle">
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th class="align-middle">
+                @Html.DisplayNameFor(model => model.ImageName)
+            </th>
+            <th class="align-middle">
+                @Html.DisplayNameFor(model => model.ImageFile)
+            </th>
+            <th class="control-panel">
+                <a class="btn btn-success modal-call" data-toggle="ajax-modal" data-url="@Url.Action("Create")"><i class="fa fa-plus fa-lg"></i></a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="align-middle">
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td class="align-middle">
+                    @Html.DisplayFor(modelItem => item.ImageName)
+                </td>
+                <td class="align-middle">
+                    <img class="rounded-circle zoom" src="@("~/Images/" + item.ImageName)" asp-append-version="true" width="38px" height="38px" />
+                </td>
+                <td class="control-panel">
+                    <a class="btn btn-primary" asp-action="Details" asp-route-id="@item.Id"><i class="fa fa-edit fa-lg"></i></a>
+                    <a class="btn btn-danger modal-call" data-toggle="ajax-modal" data-url="@Url.Action("Delete", new { Id = item.Id })"><i class="fa fa-trash-o fa-lg"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
